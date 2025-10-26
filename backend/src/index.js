@@ -38,11 +38,6 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-// Simple health check endpoint
-app.get("/api/ping", (req, res) => {
-  res.status(200).send("pong");
-});
-
 server.listen(PORT, () => {
   console.log("server is running on PORT:" + PORT);
   connectDB();
