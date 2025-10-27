@@ -5,6 +5,16 @@ import App from "./App.jsx";
 
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
+const originalWarn = console.warn;
+console.warn = (...args) => {
+  if (
+    typeof args[0] === "string" &&
+    (args[0].includes("v7_startTransition") ||
+     args[0].includes("v7_fetcherPersist"))
+  ) return;
+  originalWarn(...args);
+};
+
 const router = createBrowserRouter(
   [
     {
