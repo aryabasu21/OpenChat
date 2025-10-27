@@ -15,6 +15,12 @@ const router = createBrowserRouter(
   {
     future: {
       v7_relativeSplatPath: true, // ✅ removes warning
+      v7_startTransition: true,
+      v7_fetchPersist: true,
+      v7_normalizeFormMethod: true,
+      v7_partialHydration: true,
+      v7_skipActionErrorRevalidation: true,
+
     },
   }
 );
